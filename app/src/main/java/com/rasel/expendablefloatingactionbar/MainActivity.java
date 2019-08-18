@@ -11,9 +11,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FloatingActionButton fab_main, fab1_mail, fab2_share;
+    private FloatingActionButton fab_main, fab1_mail, fab3_share, fab2_bookmark;
     private Animation fab_open, fab_close, fab_clock, fab_anticlock;
-    TextView textview_mail, textview_share;
 
     Boolean isOpen = false;
 
@@ -24,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
 
         fab_main = findViewById(R.id.fab);
         fab1_mail = findViewById(R.id.fab1);
-        fab2_share = findViewById(R.id.fab2);
+        fab2_bookmark = findViewById(R.id.fab2);
+        fab3_share = findViewById(R.id.fab3);
+
         fab_close = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
         fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
         fab_clock = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_rotate_clock);
         fab_anticlock = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_rotate_anticlock);
 
-        textview_mail = findViewById(R.id.textview_mail);
-        textview_share = findViewById(R.id.textview_share);
 
         fab_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,24 +38,23 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isOpen) {
 
-                    textview_mail.setVisibility(View.INVISIBLE);
-                    textview_share.setVisibility(View.INVISIBLE);
-
-                    fab2_share.startAnimation(fab_close);
+                    fab3_share.startAnimation(fab_close);
+                    fab2_bookmark.startAnimation(fab_close);
                     fab1_mail.startAnimation(fab_close);
                     fab_main.startAnimation(fab_anticlock);
-                    fab2_share.setClickable(false);
+                    fab3_share.setClickable(false);
+                    fab2_bookmark.setClickable(false);
                     fab1_mail.setClickable(false);
                     isOpen = false;
 
                 } else {
-                    textview_mail.setVisibility(View.VISIBLE);
-                    textview_share.setVisibility(View.VISIBLE);
 
-                    fab2_share.startAnimation(fab_open);
+                    fab3_share.startAnimation(fab_open);
+                    fab2_bookmark.startAnimation(fab_open);
                     fab1_mail.startAnimation(fab_open);
                     fab_main.startAnimation(fab_clock);
-                    fab2_share.setClickable(true);
+                    fab3_share.setClickable(true);
+                    fab2_bookmark.setClickable(true);
                     fab1_mail.setClickable(true);
                     isOpen = true;
                 }
@@ -64,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        fab2_share.setOnClickListener(new View.OnClickListener() {
+        fab3_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

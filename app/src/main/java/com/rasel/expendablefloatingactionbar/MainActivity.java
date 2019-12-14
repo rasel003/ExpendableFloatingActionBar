@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     fab2_bookmark.startAnimation(fab_close);
                     fab1_mail.startAnimation(fab_close);
                     fab_main.startAnimation(fab_anticlock);
+
                     fab3_share.setClickable(false);
                     fab2_bookmark.setClickable(false);
                     fab1_mail.setClickable(false);
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     fab2_bookmark.startAnimation(fab_open);
                     fab1_mail.startAnimation(fab_open);
                     fab_main.startAnimation(fab_clock);
+
                     fab3_share.setClickable(true);
                     fab2_bookmark.setClickable(true);
                     fab1_mail.setClickable(true);
